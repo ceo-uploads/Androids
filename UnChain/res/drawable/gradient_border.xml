@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer Gradient Circle (Border) -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:angle="270"
+                android:startColor="@color/yellow_dark"
+                android:endColor="@color/pink_dark"/>
+        </shape>
+    </item>
+
+    <!-- Inner Transparent Cutout -->
+    <item android:width="88dp" android:height="88dp" android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent"/>
+        </shape>
+    </item>
+
+</layer-list>

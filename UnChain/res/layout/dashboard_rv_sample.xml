@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image_rv"
+        app:layout_constraintEnd_toEndOf="@id/profile_image_rv"
+        app:layout_constraintStart_toStartOf="@id/profile_image_rv"
+        app:layout_constraintTop_toTopOf="@id/profile_image_rv" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/white_border"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image_rv"
+        app:layout_constraintEnd_toEndOf="@id/profile_image_rv"
+        app:layout_constraintStart_toStartOf="@id/profile_image_rv"
+        app:layout_constraintTop_toTopOf="@id/profile_image_rv" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_rv"
+        android:layout_width="@dimen/_40mdp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginTop="30dp"
+        android:padding="4dp"
+        android:src="@drawable/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profile_name_notf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Andrew Adams"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image_rv"
+        app:layout_constraintStart_toEndOf="@id/profile_image_rv"
+        app:layout_constraintTop_toTopOf="@id/profile_image_rv" />
+
+    <TextView
+        android:id="@+id/upload_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1m"
+        app:layout_constraintEnd_toEndOf="@id/profile_name_notf"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/profile_name_notf"
+        app:layout_constraintTop_toBottomOf="@id/profile_name_notf" />
+
+    <ImageView
+        android:id="@+id/three_dot"
+        android:layout_width="20dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image_rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_image_rv"
+        app:srcCompat="@drawable/three_dots" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/postImage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_200mdp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image_rv"
+        app:layout_constraintVertical_bias="0.043"
+        app:riv_corner_radius="10dip"
+        app:riv_mutate_background="true" />
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="200k"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/heartIcon"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <ImageView
+        android:id="@+id/heartIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/like"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:srcCompat="@drawable/love_icon_without_bg"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/commentIcon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toEndOf="@id/like"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:srcCompat="@drawable/comment_icon"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="3249"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/commentIcon"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <ImageView
+        android:id="@+id/shareIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@id/comment"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:srcCompat="@drawable/share_icon"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="16k"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/shareIcon"
+        app:layout_constraintTop_toBottomOf="@id/postImage" />
+
+    <ImageView
+        android:id="@+id/saveIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/share"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:srcCompat="@drawable/save_icon_without_bg"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

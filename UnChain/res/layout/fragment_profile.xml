@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.github.florent37.diagonallayout.DiagonalLayout
+                    android:id="@+id/diagonalLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_230mdp"
+                    android:elevation="30dp"
+                    app:diagonal_direction="left"
+                    diagonal:diagonal_angle="10"
+                    diagonal:diagonal_position="bottom">
+
+                    <ImageView
+                        android:id="@+id/cover_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/storytwo" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#4E161414" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="My Profile"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14font_mdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/setting_icon"
+                        android:layout_width="@dimen/_20mdp"
+                        android:layout_height="@dimen/_20mdp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/setting_icon"
+                        app:tint="@color/white" />
+
+
+                </com.github.florent37.diagonallayout.DiagonalLayout>
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="@dimen/_90mdp"
+                android:layout_height="@dimen/_90mdp"
+                android:src="@drawable/profile"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:layout_constraintVertical_bias="1.0">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/check_icon"
+                app:layout_constraintBottom_toBottomOf="@id/profile_pic"
+                app:layout_constraintEnd_toEndOf="@id/profile_pic"
+                app:layout_constraintHorizontal_bias="0.83"
+                app:layout_constraintStart_toStartOf="@id/profile_pic"
+                app:layout_constraintTop_toTopOf="@id/profile_pic"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/upload_cp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/add_cp"
+                app:layout_constraintBottom_toBottomOf="@id/linearLayout"
+                app:layout_constraintStart_toStartOf="@id/linearLayout"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/profile_name_notf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/acme"
+                android:text="Unreal Studio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20font_mdp"
+                app:layout_constraintEnd_toEndOf="@id/profile_pic"
+                app:layout_constraintStart_toStartOf="@id/profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/profile_pic" />
+
+            <TextView
+                android:id="@+id/profession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Software Company"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="@dimen/_10font_mdp"
+                app:layout_constraintEnd_toEndOf="@id/profile_name_notf"
+                app:layout_constraintStart_toStartOf="@id/profile_name_notf"
+                app:layout_constraintTop_toBottomOf="@id/profile_name_notf" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profession">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#333333">
+
+                    <TextView
+                        android:id="@+id/tvFollowers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Followers"
+                        android:textColor="#D9CFCF"
+                        android:textSize="@dimen/_10font_mdp"
+                        app:layout_constraintEnd_toStartOf="@+id/view6"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+                    <TextView
+                        android:id="@+id/followers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="11729"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14font_mdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tvFollowers"
+                        app:layout_constraintStart_toStartOf="@id/tvFollowers"
+                        app:layout_constraintTop_toBottomOf="@id/tvFollowers" />
+
+                    <View
+                        android:id="@+id/view6"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvFriends"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvFollowers"
+                        app:layout_constraintTop_toTopOf="@+id/tvFriends" />
+
+                    <TextView
+                        android:id="@+id/tvFriends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Friends"
+                        android:textColor="#D9CFCF"
+                        android:textSize="@dimen/_10font_mdp"
+                        app:layout_constraintEnd_toStartOf="@+id/view7"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/view6"
+                        app:layout_constraintTop_toTopOf="@+id/view7" />
+
+                    <TextView
+                        android:id="@+id/friends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="2745"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14font_mdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tvFriends"
+                        app:layout_constraintStart_toStartOf="@id/tvFriends"
+                        app:layout_constraintTop_toBottomOf="@id/tvFriends" />
+
+                    <View
+                        android:id="@+id/view7"
+                        android:layout_width="1dp"
+                        android:layout_height="55dp"
+                        android:background="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPosts"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvFriends"
+                        app:layout_constraintTop_toTopOf="@+id/tvFriends" />
+
+                    <TextView
+                        android:id="@+id/tvPosts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Posts"
+                        android:textColor="#D9CFCF"
+                        android:textSize="@dimen/_10font_mdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintTop_toTopOf="@id/view7"
+                        app:layout_constraintStart_toEndOf="@+id/view7" />
+
+                    <TextView
+                        android:id="@+id/posts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="7dp"
+                        android:text="201"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14font_mdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tvPosts"
+                        app:layout_constraintStart_toStartOf="@id/tvPosts"
+                        app:layout_constraintTop_toBottomOf="@id/tvPosts" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/editBio"
+                android:layout_width="@dimen/_30mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_marginStart="116dp"
+                android:layout_marginTop="@dimen/_16mdp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/teal_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            <View
+                android:id="@+id/shareProfile"
+                android:layout_width="@dimen/_30mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/_16mdp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="#F73718"
+                app:layout_constraintStart_toEndOf="@id/editBio"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            <View
+                android:id="@+id/contactInfo"
+                android:layout_width="@dimen/_30mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/_16mdp"
+                android:background="@drawable/circular_background"
+                app:layout_constraintStart_toEndOf="@id/shareProfile"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            <ImageView
+                android:id="@+id/edit_profile_icon"
+                android:layout_width="@dimen/_20mdp"
+                android:layout_height="@dimen/_20mdp"
+                android:src="@drawable/edit_profile_icon"
+                app:layout_constraintBottom_toBottomOf="@id/editBio"
+                app:layout_constraintEnd_toEndOf="@id/editBio"
+                app:layout_constraintHorizontal_bias="0.64"
+                app:layout_constraintStart_toStartOf="@id/editBio"
+                app:layout_constraintTop_toTopOf="@id/editBio"
+                app:layout_constraintVertical_bias="0.39"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/share_profile_icon"
+                android:layout_width="@dimen/_20mdp"
+                android:layout_height="@dimen/_20mdp"
+                android:src="@drawable/share_profile_icon"
+                app:layout_constraintBottom_toBottomOf="@id/shareProfile"
+                app:layout_constraintEnd_toEndOf="@id/shareProfile"
+                app:layout_constraintStart_toStartOf="@id/shareProfile"
+                app:layout_constraintTop_toTopOf="@id/shareProfile" />
+
+            <ImageView
+                android:id="@+id/contact_info_icon"
+                android:layout_width="@dimen/_20mdp"
+                android:layout_height="@dimen/_20mdp"
+                android:src="@drawable/contact_info_icon"
+                app:layout_constraintBottom_toBottomOf="@id/contactInfo"
+                app:layout_constraintEnd_toEndOf="@id/contactInfo"
+                app:layout_constraintStart_toStartOf="@id/contactInfo"
+                app:layout_constraintTop_toTopOf="@id/contactInfo"
+                app:layout_constraintVertical_bias="0.43"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="16dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/_12font_mdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shareProfile" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/alatsi"
+                android:text="My Friends"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/friend_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView9" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
